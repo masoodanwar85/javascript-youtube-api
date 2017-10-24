@@ -20,7 +20,7 @@ var youtubeAPI = {
 		list: function() {
 			return new Promise(function(resolve, reject){
 				var completeURL = this.searchURL + youtubeAPI.stringifyOptions(this.options);
-				this.getJSONResult(completeURL).done(function(data){
+				youtubeAPI.getJSONResult(completeURL).done(function(data){
 					resolve(data);
 				}).catch(err){
 					reject(err);
