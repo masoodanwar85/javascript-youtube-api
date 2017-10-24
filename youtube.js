@@ -16,10 +16,10 @@ var youtubeAPI = {
 		setOptions: function(optionsObj) {
 			// Replace Options with the provided ones
 		},
-		searchURL: `${this.baseURL}/${this.apiVersion}/?key={this.apiKey}`,
+		searchURL: `${youtubeAPI.baseURL}/${youtubeAPI.apiVersion}/?key={youtubeAPI.apiKey}`,
 		list: function() {
 			return new Promise(function(resolve, reject){
-				var completeURL = this.search.searchURL + this.stringifyOptions(this.search.options);
+				var completeURL = this.searchURL + youtubeAPI.stringifyOptions(this.options);
 				this.getJSONResult(completeURL).done(function(data){
 					resolve(data);
 				}).catch(err){
